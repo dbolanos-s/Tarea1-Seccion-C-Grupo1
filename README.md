@@ -1,18 +1,13 @@
-## Getting Started
+# Sección C: Patrón Singleton con AOP
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este proyecto contiene la implementación del patrón de diseño **Singleton** utilizando el paradigma de **Programación Orientada a Aspectos (AOP)**.
 
-## Folder Structure
+## Descripción
+A diferencia de la implementación tradicional (OOP), aquí la lógica de instancia única se desacopla totalmente de la clase de negocio.
+- **Clase de Negocio (`GestorConfiguracion.java`):** Es un POJO (Plain Old Java Object) con un constructor público. No contiene lógica de control de instancias.
+- **Aspecto (`SingletonAspect.java`):** Intercepta todas las llamadas al constructor `new GestorConfiguracion()` y gestiona la unicidad del objeto utilizando un mapa de instancias.
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Estructura de Archivos
+- `src/singleton_aop/GestorConfiguracion.java`: Clase que simula la conexión a base de datos.
+- `src/singleton_aop/SingletonAspect.java`: Aspecto que aplica la restricción Singleton.
+- `src/singleton_aop/MainSingletonAOP.java`: Clase principal para probar que dos instancias son idénticas en memoria.
